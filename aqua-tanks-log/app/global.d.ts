@@ -1,3 +1,4 @@
+import { PrismaClient } from '@prisma/client'
 import {} from 'hono'
 
 type Head = {
@@ -6,7 +7,9 @@ type Head = {
 
 declare module 'hono' {
   interface Env {
-    Variables: {}
+    Variables: {
+      prisma: PrismaClient
+    }
     Bindings: {}
   }
   interface ContextRenderer {

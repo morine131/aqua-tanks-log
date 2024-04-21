@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "@prisma/client": "5.12.1",
     "hono": "^4.2.5",
     "honox": "^0.1.15"
   },
@@ -16,6 +17,7 @@
     "@cloudflare/workers-types": "^4.20240403.0",
     "@hono/vite-cloudflare-pages": "^0.2.4",
     "@hono/vite-dev-server": "^0.11.0",
+    "prisma": "5.12.1",
     "vite": "^5.0.12",
     "wrangler": "^3.47.0"
   }

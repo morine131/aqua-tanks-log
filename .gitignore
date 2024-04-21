@@ -130,3 +130,6 @@ dist
 .pnp.*
 
 .pnpm-store
+
+# prisma 
+dev.db*

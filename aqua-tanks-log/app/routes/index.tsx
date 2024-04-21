@@ -1,18 +1,21 @@
 import { css } from 'hono/css'
 import { createRoute } from 'honox/factory'
-import Counter from '../islands/counter'
 
 const className = css`
   font-family: sans-serif;
 `
 
-export default createRoute((c) => {
-  const name = c.req.query('name') ?? 'Hono'
+export default createRoute(async (c) => {
+
+  const tanks = await c.get("prisma").tank.findMany()
   return c.render(
     <div class={className}>
-      <h1>Hello, {name}!</h1>
-      <Counter />
+      <h1>Your anks</h1>
+      <ul>
+        {
+          tanks.map(tank => <li>{tank.title}{tank.id}</li>)
+        }
+      </ul>
     </div>,
-    { title: name }
   )
 })
