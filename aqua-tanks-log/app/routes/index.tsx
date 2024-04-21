@@ -1,5 +1,6 @@
 import { css } from 'hono/css'
 import { createRoute } from 'honox/factory'
+import AddButton from '../islands/addButton'
 
 const className = css`
   font-family: sans-serif;
@@ -16,6 +17,7 @@ export default createRoute(async (c) => {
           tanks.map(tank => <li>{tank.title}{tank.id}</li>)
         }
       </ul>
+      <AddButton />
     </div>,
   )
 })
